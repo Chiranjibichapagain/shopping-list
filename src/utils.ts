@@ -1,5 +1,4 @@
 import { v4 as uuidv4 } from "uuid";
-import { data } from "./data";
 import { T_ShoppingListItem } from "./types";
 
 export const generateRandomProducts = (): T_ShoppingListItem[] => {
@@ -32,8 +31,4 @@ export const generateRandomProducts = (): T_ShoppingListItem[] => {
     },
   ];
   return randomData;
-};
-export const saveData = (newData: T_ShoppingListItem[]) => {
-  console.log("in utils--", newData);
-  data.concat(...newData);
 };

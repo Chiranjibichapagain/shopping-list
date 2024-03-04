@@ -163,5 +163,3 @@ export const addNewItemContainerStyles = (): SystemStyleObject => {
     marginBottom: "50px",
   };
 };
-
-//    backgroundColor: "rgba(128, 131, 158, 0.9)",

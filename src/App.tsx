@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
+
 import { appStyles } from "./styles";
 import { Container } from "./components/Container";
 import { Image } from "./components/Image";
 import logo from "./assets/shopping-list.png";
 import { Font } from "./components/Font";
-import { generateRandomProducts, saveData } from "./utils";
+import { generateRandomProducts } from "./utils";
 import { T_ShoppingListItem } from "./types";
 import { useForm } from "./useForm";
 import { AddItemForm } from "./components/AddItemForm";
@@ -22,7 +23,7 @@ function App() {
   const [data, setData] = useState<T_ShoppingListItem[]>([]);
   const [isItemReady, setIsItemReady] = useState<boolean>(false);
 
-  const date = new Date().toLocaleDateString().slice(0, 10);
+  const date: string = new Date().toLocaleDateString().slice(0, 10);
 
   useEffect(() => {
     const randomData: T_ShoppingListItem[] = generateRandomProducts();
@@ -43,7 +44,7 @@ function App() {
   };
 
   const handleAddNewShoppingItem = (newProduct: T_ShoppingListItem) => {
-    const newItem = {
+    const newItem: T_ShoppingListItem = {
       id: newProduct.id,
       name: newProduct.name,
       amount: newProduct.amount,
