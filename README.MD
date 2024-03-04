@@ -1,5 +1,8 @@
 # About
 
+The application is available in the following production url:
+[https://shopping-list-x.netlify.app/](https://shopping-list-x.netlify.app/)
+
 Shopping list a simple hobby project where users can:
 
 - add new products to the list.
@@ -9,7 +12,7 @@ Shopping list a simple hobby project where users can:
 
 # Tech stack
 
-The application is built on React typescript and styled with styled component
+The application is built on React typescript and styled with styled component.
 
 ## Installation
 
@@ -22,12 +25,6 @@ npm install
 ```bash
 npm start
 
-```
-
-## Run locally on PORT 3000
-
-```bash
-npm start
 ```
 
 ## Build
