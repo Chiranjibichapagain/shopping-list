@@ -1,6 +1,14 @@
 import { SystemStyleObject } from "@styled-system/css";
 import backgroundImage from "../assets/background.jpeg";
 
+type T_ListStyleProps = {
+  type?: string;
+};
+
+type T_headingStylesProps = {
+  align?: "right" | "left" | "center";
+};
+
 export const appRootStyles = (): SystemStyleObject => {
   return {
     margin: 0,
@@ -14,86 +22,146 @@ export const appRootStyles = (): SystemStyleObject => {
     fontFamily: "lato, sans-serif",
   };
 };
+export const appBodyStyles = (): SystemStyleObject => {
+  return {
+    boxSizing: "border-box",
+    width: "960px",
+    margin: "0 auto",
+  };
+};
 
 export const headerStyles = (): SystemStyleObject => {
   return {
+    width: "100%",
+    padding: "20px ",
     boxSizing: "border-box",
     display: "flex",
-    justifyContent: "center",
+    justifyContent: "space-between",
     alignItems: "center",
+    marginBottom: "20px",
   };
 };
 
-export const navItemStyles = (): SystemStyleObject => {
+export const logoStyles = (): SystemStyleObject => {
   return {
-    backgroundColor: "rgba(195, 196, 201, 0.7)",
-    borderRight: "0.5px solid white",
-    width: "200px",
-    height: "60px",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+    width: "80px",
+    height: "80px",
+  };
+};
+
+export const iconStyles = (): SystemStyleObject => {
+  return {
+    width: "20px",
+    height: "20px",
+    color: "#004975",
     cursor: "pointer",
-    ":hover": {
-      backgroundColor: "#D3D6E9",
-      transition: "0.3s ease-in-out",
-    },
-    ":last-of-type": {
-      border: "none",
-    },
-  };
-};
-export const activeNavItemStyles = (): SystemStyleObject => {
-  return {
-    ...navItemStyles(),
-    backgroundColor: "rgba(112, 115, 138, 0.8)",
-    ":hover": {
-      backgroundColor: "rgba(112, 115, 138, 0.8)",
-    },
+    margin: "0 5px",
   };
 };
 
-export const navTextStyles = (): SystemStyleObject => {
+export const appTextStyles = (): SystemStyleObject => {
   return {
-    fontWeight: "600",
-    color: "#565657",
-  };
-};
-export const activeNavTextStyles = (): SystemStyleObject => {
-  return {
-    ...navTextStyles(),
-    color: "#f2f2f2",
-  };
-};
-
-export const noChannelsContainerStyles = (): SystemStyleObject => {
-  return {
-    boxSizing: "border-box",
-    margin: "0 auto",
-    padding: "20px",
-    maxWidth: "602px",
-    height: "80%",
-    border: "1px solid rgb(195, 196, 201)",
-    borderRadius: "0 0px 10px 10px",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-  };
-};
-
-export const noChannelsGifStyles = (): SystemStyleObject => {
-  return {
-    width: "300px",
-    height: "300px",
-  };
-};
-export const noChannelSelectedTextStyles = (): SystemStyleObject => {
-  return {
-    margin: "50px auto",
-    width: "600px",
-    fontSize: "18px",
-    color: "#2a2a2a",
+    color: "#004975",
+    margin: 0,
     textAlign: "center",
   };
 };
+
+export const appNameStyles = (): SystemStyleObject => {
+  return {
+    fontSize: "80px",
+    color: "#004975",
+    width: "800px",
+    margin: 0,
+    textAlign: "center",
+    fontWeight: 800,
+  };
+};
+
+export const bodyContainerStyles = (): SystemStyleObject => {
+  return {
+    width: "100%",
+    boxSizing: "border-box",
+    padding: "20px 200px",
+  };
+};
+
+export const headingStyles = (
+  props: T_headingStylesProps
+): SystemStyleObject => {
+  return {
+    fontSize: "22px",
+    color: "#004975",
+    margin: 0,
+    fontWeight: 800,
+    textAlign: props.align ?? "left",
+  };
+};
+
+export const shoppingListItemStyles = (): SystemStyleObject => {
+  return {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: "10px 15px",
+    "&:hover": {
+      backgroundColor: "rgba(128, 131, 158, 0.5)",
+      borderRadius: "6px",
+    },
+  };
+};
+
+export const shoppingListTextStyles = (
+  props: T_ListStyleProps
+): SystemStyleObject => {
+  return {
+    width: props.type === "product" ? "300px" : "50px",
+    fontSize: "16px",
+    color: "#004975",
+    margin: "0 10px",
+    fontWeight: 800,
+  };
+};
+
+export const inputStyles = (props: T_ListStyleProps): SystemStyleObject => {
+  return {
+    width: props.type === "product" ? "300px" : "70px",
+    height: "30px",
+    background: "none",
+    border: "1px solid gray",
+    borderRadius: "4px",
+    padding: "0 8px",
+    margin: "0 15px",
+  };
+};
+
+export const buttonStyles = (): SystemStyleObject => {
+  return {
+    minWidth: "80px",
+    height: "30px",
+    backgroundColor: "#004975",
+    border: "none",
+    borderRadius: "8px",
+    padding: "0 8px",
+    color: "#f2f2f2",
+    fontSize: "16px",
+    fontWeight: "bold",
+    cursor: "pointer",
+    ":disabled": {
+      backgroundColor: "gray",
+      cursor: "not-allowed",
+    },
+  };
+};
+
+export const addNewItemContainerStyles = (): SystemStyleObject => {
+  return {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: "10px 15px",
+    marginBottom: "50px",
+  };
+};
+
+//    backgroundColor: "rgba(128, 131, 158, 0.9)",

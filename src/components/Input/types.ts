@@ -5,8 +5,10 @@ export type T_InputProps = {
   styles: SystemStyleObject;
   type: string;
   name: string;
-  value: string;
+  defaultValue?: string | number;
+  value?: string | number;
+  min?: number;
+  required?: boolean;
   placeholder?: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  onKeyPress: (e: React.KeyboardEvent<HTMLInputElement>) => void;
 };
